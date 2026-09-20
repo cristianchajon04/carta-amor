@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 💜</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #9b59b6,
+                    #5b1680 70%,
+                    #35004f
+                );
+
+            font-family: Georgia, serif;
+        }
+
+
+        /* =========================================
+           CARTA
+        ========================================= */
+
+        .carta {
+            position: relative;
+            z-index: 10;
+
+            width: 520px;
+            padding: 45px 35px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,.96);
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.45),
+                0 0 30px rgba(220,180,255,.25);
+
+            animation: aparecerCarta 2s ease;
+        }
+
+        @keyframes aparecerCarta {
+
+            from {
+                opacity: 0;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =========================================
+           CORAZÓN
+        ========================================= */
+
+        .corazon {
+            font-size: 75px;
+
+            animation: latido 1.3s infinite;
+
+            filter:
+                drop-shadow(
+                    0 0 12px
+                    rgba(170,80,220,.7)
+                );
+        }
+
+        @keyframes latido {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+
+        }
+
+
+        h1 {
+            margin: 20px 0;
+
+            color: #68118f;
+
+            font-size: 43px;
+        }
+
+        p {
+            color: #555;
+
+            font-size: 19px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           RAMOS LATERALES
+        ========================================= */
+
+        .ramo {
+            position: absolute;
+
+            top: 50%;
+
+            width: 270px;
+            height: 500px;
+
+            transform: translateY(-50%);
+
+            z-index: 3;
+
+            animation:
+                ramoMovimiento
+                5s ease-in-out infinite;
+        }
+
+        .ramo-izquierdo {
+            left: -15px;
+        }
+
+        .ramo-derecho {
+            right: -15px;
+        }
+
+
+        /* =========================================
+           ROSAS
+        ========================================= */
+
+        .rosa {
+            position: absolute;
+
+            width: 75px;
+            height: 75px;
+
+            animation:
+                rosaMovimiento
+                4s ease-in-out infinite;
+        }
+
+        .rosa::before,
+        .rosa::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius:
+                50% 50% 45% 45%;
+
+            background:
+                radial-gradient(
+                    circle at 50% 60%,
+                    #6d0a75 5%,
+                    #a91d9e 35%,
+                    #d94dcc 65%,
+                    #f18ae8 100%
+                );
+
+            box-shadow:
+                inset 5px 5px 8px
+                rgba(255,255,255,.3),
+
+                inset -5px -5px 8px
+                rgba(70,0,70,.3);
+        }
+
+        .rosa::before {
+            left: 5px;
+            top: 10px;
+
+            transform: rotate(-25deg);
+        }
+
+        .rosa::after {
+            right: 5px;
+            top: 10px;
+
+            transform: rotate(25deg);
+        }
+
+        .petalos {
+
+            position: absolute;
+
+            left: 18px;
+            top: 15px;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #7d087d 0%,
+                    #c128b8 45%,
+                    #ec70df 75%
+                );
+
+            box-shadow:
+                inset 4px 4px 6px
+                rgba(255,255,255,.3),
+
+                inset -4px -4px 6px
+                rgba(60,0,60,.35);
+
+            z-index: 2;
+        }
+
+        .petalos::before,
+        .petalos::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 27px;
+            height: 27px;
+
+            border-radius: 50%;
+
+            background: #b51cab;
+        }
+
+        .petalos::before {
+            left: -5px;
+            top: 10px;
+        }
+
+        .petalos::after {
+            right: -5px;
+            top: 10px;
+        }
+
+
+        /* =========================================
+           POSICIONES RAMO IZQUIERDO
+        ========================================= */
+
+        .ramo-izquierdo .rosa:nth-child(1) {
+            left: 90px;
+            top: 30px;
+        }
+
+        .ramo-izquierdo .rosa:nth-child(2) {
+            left: 35px;
+            top: 80px;
+        }
+
+        .ramo-izquierdo .rosa:nth-child(3) {
+            left: 145px;
+            top: 85px;
+        }
+
+        .ramo-izquierdo .rosa:nth-child(4) {
+            left: 15px;
+            top: 145px;
+        }
+
+        .ramo-izquierdo .rosa:nth-child(5) {
+            left: 95px;
+            top: 145px;
+        }
+
+        .ramo-izquierdo .rosa:nth-child(6) {
+            left: 175px;
+            top: 145px;
+        }
+
+
+        /* =========================================
+           POSICIONES RAMO DERECHO
+        ========================================= */
+
+        .ramo-derecho .rosa:nth-child(1) {
+            right: 90px;
+            top: 30px;
+        }
+
+        .ramo-derecho .rosa:nth-child(2) {
+            right: 35px;
+            top: 80px;
+        }
+
+        .ramo-derecho .rosa:nth-child(3) {
+            right: 145px;
+            top: 85px;
+        }
+
+        .ramo-derecho .rosa:nth-child(4) {
+            right: 15px;
+            top: 145px;
+        }
+
+        .ramo-derecho .rosa:nth-child(5) {
+            right: 95px;
+            top: 145px;
+        }
+
+        .ramo-derecho .rosa:nth-child(6) {
+            right: 175px;
+            top: 145px;
+        }
+
+
+        /* =========================================
+           TALLOS
+        ========================================= */
+
+        .tallos {
+
+            position: absolute;
+
+            bottom: 80px;
+            left: 50%;
+
+            width: 120px;
+            height: 180px;
+
+            transform:
+                translateX(-50%);
+
+            z-index: -1;
+        }
+
+        .tallo {
+
+            position: absolute;
+
+            bottom: 0;
+
+            width: 7px;
+            height: 180px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #245c2b,
+                    #4c9b43,
+                    #245c2b
+                );
+
+            border-radius: 10px;
+
+            transform-origin: bottom;
+        }
+
+        .tallo:nth-child(1) {
+            left: 55px;
+            transform: rotate(-20deg);
+        }
+
+        .tallo:nth-child(2) {
+            left: 70px;
+            transform: rotate(-10deg);
+        }
+
+        .tallo:nth-child(3) {
+            left: 85px;
+            transform: rotate(10deg);
+        }
+
+        .tallo:nth-child(4) {
+            left: 100px;
+            transform: rotate(20deg);
+        }
+
+
+        /* =========================================
+           HOJAS
+        ========================================= */
+
+        .hoja {
+
+            position: absolute;
+
+            width: 42px;
+            height: 20px;
+
+            background: #39833c;
+
+            border-radius:
+                100% 0 100% 0;
+        }
+
+        .hoja:nth-child(5) {
+            left: 15px;
+            bottom: 90px;
+
+            transform: rotate(-30deg);
+        }
+
+        .hoja:nth-child(6) {
+            right: 5px;
+            bottom: 115px;
+
+            transform: rotate(30deg);
+        }
+
+        .hoja:nth-child(7) {
+            left: 35px;
+            bottom: 45px;
+
+            transform: rotate(-20deg);
+        }
+
+
+        /* =========================================
+           ENVOLTURA
+        ========================================= */
+
+        .envoltura {
+
+            position: absolute;
+
+            bottom: 20px;
+            left: 50%;
+
+            width: 190px;
+            height: 120px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ead7f4,
+                    #c58bdd,
+                    #ead7f4
+                );
+
+            clip-path:
+                polygon(
+                    5% 0,
+                    95% 0,
+                    72% 100%,
+                    28% 100%
+                );
+
+            box-shadow:
+                0 8px 15px
+                rgba(0,0,0,.25);
+        }
+
+        .cinta {
+
+            position: absolute;
+
+            bottom: 75px;
+            left: 50%;
+
+            width: 90px;
+            height: 18px;
+
+            transform:
+                translateX(-50%);
+
+            background: #8e3ca8;
+
+            border-radius: 20px;
+
+            z-index: 3;
+        }
+
+
+        /* =========================================
+           MOVIMIENTO DE LOS RAMOS
+        ========================================= */
+
+        @keyframes ramoMovimiento {
+
+            0%, 100% {
+                transform:
+                    translateY(-50%)
+                    rotate(-1deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-50%)
+                    rotate(1deg);
+            }
+
+        }
+
+        @keyframes rosaMovimiento {
+
+            0%, 100% {
+                margin-top: 0;
+            }
+
+            50% {
+                margin-top: -5px;
+            }
+
+        }
+
+
+        /* =========================================
+           PERSONAJE
+        ========================================= */
+
+        .personaje {
+
+            position: absolute;
+
+            z-index: 20;
+
+            bottom: 35px;
+
+            left: -220px;
+
+            width: 150px;
+            height: 250px;
+
+            opacity: 0;
+
+            animation:
+                entradaPersonaje
+                7s ease-in-out
+                3s forwards;
+        }
+
+
+        /* =========================================
+           CABEZA
+        ========================================= */
+
+        .cabeza {
+
+            position: absolute;
+
+            top: 0;
+            left: 45px;
+
+            width: 65px;
+            height: 65px;
+
+            background: #ffd2b3;
+
+            border-radius: 50%;
+
+            border: 3px solid #6d3d2c;
+        }
+
+
+        /* =========================================
+           CABELLO
+        ========================================= */
+
+        .cabello {
+
+            position: absolute;
+
+            top: -5px;
+            left: 42px;
+
+            width: 70px;
+            height: 35px;
+
+            background: #351b13;
+
+            border-radius:
+                50% 50% 20% 20%;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           CUERPO
+        ========================================= */
+
+        .cuerpo {
+
+            position: absolute;
+
+            top: 60px;
+            left: 40px;
+
+            width: 75px;
+            height: 100px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c2b87,
+                    #401152
+                );
+
+            border-radius:
+                25px 25px 15px 15px;
+        }
+
+
+        /* =========================================
+           BRAZOS
+        ========================================= */
+
+        .brazo {
+
+            position: absolute;
+
+            width: 65px;
+            height: 15px;
+
+            background: #ffd2b3;
+
+            border-radius: 20px;
+
+            top: 85px;
+
+            transform-origin: left center;
+        }
+
+        .brazo-izquierdo {
+            left: 30px;
+
+            transform: rotate(30deg);
+        }
+
+        .brazo-derecho {
+            left: 80px;
+
+            transform: rotate(145deg);
+        }
+
+
+        /* =========================================
+           PIERNAS
+        ========================================= */
+
+        .pierna {
+
+            position: absolute;
+
+            width: 22px;
+            height: 90px;
+
+            background: #252544;
+
+            border-radius: 15px;
+
+            top: 145px;
+
+            transform-origin: top center;
+        }
+
+        .pierna-izquierda {
+            left: 48px;
+
+            transform: rotate(8deg);
+        }
+
+        .pierna-derecha {
+            left: 82px;
+
+            transform: rotate(-8deg);
+        }
+
+
+        /* =========================================
+           ZAPATOS
+        ========================================= */
+
+        .zapato {
+
+            position: absolute;
+
+            width: 45px;
+            height: 18px;
+
+            background: #111;
+
+            border-radius: 20px;
+
+            top: 225px;
+        }
+
+        .zapato-izquierdo {
+            left: 32px;
+        }
+
+        .zapato-derecho {
+            left: 75px;
+        }
+
+
+        /* =========================================
+           RAMO QUE ENTREGA
+        ========================================= */
+
+        .ramo-regalo {
+
+            position: absolute;
+
+            width: 100px;
+            height: 90px;
+
+            top: 80px;
+            left: 65px;
+
+            opacity: 0;
+
+            transform:
+                rotate(-15deg)
+                scale(.7);
+
+            animation:
+                aparecerRamo
+                1.5s ease
+                8s forwards;
+        }
+
+        .rosa-regalo {
+
+            position: absolute;
+
+            font-size: 38px;
+        }
+
+        .rosa-regalo:nth-child(1) {
+            left: 5px;
+            top: 20px;
+        }
+
+        .rosa-regalo:nth-child(2) {
+            left: 30px;
+            top: 0;
+        }
+
+        .rosa-regalo:nth-child(3) {
+            left: 55px;
+            top: 20px;
+        }
+
+        .rosa-regalo:nth-child(4) {
+            left: 30px;
+            top: 35px;
+        }
+
+
+        /* =========================================
+           ANIMACIÓN DEL PERSONAJE
+           
+           Comienza después de 3 segundos.
+           
+           El personaje:
+           1. Aparece
+           2. Camina
+           3. Llega al centro
+           4. Se arrodilla
+           5. Se queda allí
+        ========================================= */
+
+        @keyframes entradaPersonaje {
+
+            /* Fuera de la pantalla */
+
+            0% {
+
+                left: -220px;
+
+                bottom: 35px;
+
+                opacity: 0;
+
+                transform:
+                    scale(.9);
+            }
+
+
+            /* Aparece */
+
+            15% {
+
+                left: -150px;
+
+                bottom: 35px;
+
+                opacity: 1;
+
+                transform:
+                    scale(.95);
+            }
+
+
+            /* Camina hacia el centro */
+
+            55% {
+
+                left: calc(50% - 75px);
+
+                bottom: 35px;
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+
+
+            /* Comienza a arrodillarse */
+
+            70% {
+
+                left: calc(50% - 75px);
+
+                bottom: 20px;
+
+                opacity: 1;
+
+                transform:
+                    scale(.95)
+                    rotate(-3deg);
+            }
+
+
+            /* Ya está arrodillado */
+
+            82% {
+
+                left: calc(50% - 75px);
+
+                bottom: 15px;
+
+                opacity: 1;
+
+                transform:
+                    scale(.95)
+                    rotate(0deg);
+            }
+
+
+            /* =====================================
+               POSICIÓN FINAL
+
+               El personaje queda aquí.
+            ===================================== */
+
+            100% {
+
+                left: calc(50% - 75px);
+
+                bottom: 15px;
+
+                opacity: 1;
+
+                transform:
+                    scale(.95)
+                    rotate(0deg);
+            }
+
+        }
+
+
+        /* =========================================
+           APARICIÓN DEL RAMO
+        ========================================= */
+
+        @keyframes aparecerRamo {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    rotate(-15deg)
+                    scale(.5);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    rotate(-15deg)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =========================================
+           MENSAJE FINAL
+        ========================================= */
+
+        .mensaje-final {
+
+            position: absolute;
+
+            z-index: 30;
+
+            left: 50%;
+
+            bottom: 35px;
+
+            transform:
+                translateX(-50%)
+                translateY(30px);
+
+            padding:
+                12px 25px;
+
+            background:
+                rgba(255,255,255,.95);
+
+            color: #68118f;
+
+            border-radius: 30px;
+
+            font-size: 21px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,.3);
+
+            opacity: 0;
+
+            animation:
+                aparecerMensaje
+                1.5s ease
+                10s forwards;
+        }
+
+        @keyframes aparecerMensaje {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(-50%)
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================================
+           CORAZONES FLOTANTES
+        ========================================= */
+
+        .corazon-pequeno {
+
+            position: absolute;
+
+            bottom: -30px;
+
+            color: #e0b5ff;
+
+            font-size: 22px;
+
+            animation:
+                subir
+                6s linear infinite;
+
+            opacity: .8;
+        }
+
+        .c1 {
+            left: 10%;
+        }
+
+        .c2 {
+            left: 25%;
+
+            animation-delay: 2s;
+        }
+
+        .c3 {
+            right: 15%;
+
+            animation-delay: 3s;
+        }
+
+        .c4 {
+            right: 30%;
+
+            animation-delay: 5s;
+        }
+
+        @keyframes subir {
+
+            0% {
+
+                transform:
+                    translateY(0);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-100vh);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================================
+           CELULAR
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .carta {
+
+                width: 85%;
+
+                padding:
+                    35px 25px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .ramo {
+
+                opacity: .35;
+
+                transform:
+                    translateY(-50%)
+                    scale(.7);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         RAMO IZQUIERDO
+    ========================================= -->
+
+    <div class="ramo ramo-izquierdo">
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+
+        <div class="tallos">
+
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+
+            <div class="hoja"></div>
+            <div class="hoja"></div>
+            <div class="hoja"></div>
+
+        </div>
+
+
+        <div class="envoltura"></div>
+
+        <div class="cinta"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         RAMO DERECHO
+    ========================================= -->
+
+    <div class="ramo ramo-derecho">
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+        <div class="rosa">
+            <div class="petalos"></div>
+        </div>
+
+
+        <div class="tallos">
+
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+            <div class="tallo"></div>
+
+            <div class="hoja"></div>
+            <div class="hoja"></div>
+            <div class="hoja"></div>
+
+        </div>
+
+
+        <div class="envoltura"></div>
+
+        <div class="cinta"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         CORAZONES FLOTANTES
+    ========================================= -->
+
+    <div class="corazon-pequeno c1">
+        💜
+    </div>
+
+    <div class="corazon-pequeno c2">
+        💜
+    </div>
+
+    <div class="corazon-pequeno c3">
+        💜
+    </div>
+
+    <div class="corazon-pequeno c4">
+        💜
+    </div>
+
+
+    <!-- =========================================
+         CARTA
+    ========================================= -->
+
+    <div class="carta">
+
+        <div class="corazon">
+            💜
+        </div>
+
+        <h1>
+            Te amo con mi alma.
+        </h1>
+
+        <p>
+            Esta pequeña carta es solo para recordarte
+            lo mucho que te amo y lo importante que eres para mí. 💜
+        </p>
+
+        <p>
+            Gracias por existir y por hacer mis días
+            mucho más especiales.
+        </p>
+
+        <p>
+            Te amo con mi alma mi reina hermosa
+        </p>
+
+    </div>
+
+
+    <!-- =========================================
+         PERSONAJE
+    ========================================= -->
+
+    <div class="personaje">
+
+        <div class="cabello"></div>
+
+        <div class="cabeza"></div>
+
+        <div class="cuerpo"></div>
+
+
+        <div class="brazo brazo-izquierdo"></div>
+
+        <div class="brazo brazo-derecho"></div>
+
+
+        <div class="pierna pierna-izquierda"></div>
+
+        <div class="pierna pierna-derecha"></div>
+
+
+        <div class="zapato zapato-izquierdo"></div>
+
+        <div class="zapato zapato-derecho"></div>
+
+
+        <!-- =====================================
+             RAMO QUE ENTREGA
+        ===================================== -->
+
+        <div class="ramo-regalo">
+
+            <div class="rosa-regalo">
+                🌹
+            </div>
+
+            <div class="rosa-regalo">
+                🌹
+            </div>
+
+            <div class="rosa-regalo">
+                🌹
+            </div>
+
+            <div class="rosa-regalo">
+                🌹
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MENSAJE FINAL
+    ========================================= -->
+
+    <div class="mensaje-final">
+
+        Este ramo es para ti 💜🌹
+
+    </div>
+
+
+</body>
+</html>
